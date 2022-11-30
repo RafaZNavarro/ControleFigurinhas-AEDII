@@ -6,13 +6,16 @@
     para receber o VALOR, uma para o ENDEREÇO à esquerda do elemento filho e um ENDEREÇO à direita do outro filho.  
 */
  
+/*------------------------------------------------ALGORITMOS DE INSERÇÃO NA ÁRVORE--------------------------------------------------*/
+
 /*--------------- INSERÇÃO DA ÁRVORE  SELECAO DO QATAR --------------------------*/
 struct insercaoQatar //Declaracao da Arvore
 { 
     int data; //Recebe o valor a ser manipulado
     struct insercaoQatar* left; //Os ponteiros permitem acessar todos os outros nós da árvore binária, partindo da raiz 
     struct insercaoQatar* right; //Para acessar a raiz, é necessário definir um ponteiro para ela, que será feito na função main
-}; typedef struct insercaoQatar nodeQatar; //Para evitar varias repeticoes desnecessárias, utiliza-se o typedef
+}; 
+typedef struct insercaoQatar nodeQatar; //Para evitar varias repeticoes desnecessárias, utiliza-se o typedef
 
 nodeQatar* createNodeQatar(int n)
 { 
@@ -47,7 +50,8 @@ struct insercaoEquador
     int data;
     struct insercaoEquador* left; 
     struct insercaoEquador* right; 
-}; typedef struct insercaoEquador nodeEquador;
+}; 
+typedef struct insercaoEquador nodeEquador;
 
 nodeEquador* createNodeEquador(int n)
 { 
@@ -57,6 +61,7 @@ nodeEquador* createNodeEquador(int n)
     newNode->left = newNode->right = NULL;
     return newNode;
 }
+
 nodeEquador* insertEquador(nodeEquador* root, int n)
 {
     if (root == NULL)
@@ -82,7 +87,8 @@ struct insercaoSenegal
     int data;
     struct insercaoSenegal* left; 
     struct insercaoSenegal* right; 
-}; typedef struct insercaoSenegal nodeSenegal;
+}; 
+typedef struct insercaoSenegal nodeSenegal;
 
 nodeSenegal* createNodeSenegal(int n)
 { 
@@ -118,7 +124,8 @@ struct insercaoHolanda
     int data;
     struct insercaoHolanda* left; 
     struct insercaoHolanda* right; 
-}; typedef struct insercaoHolanda nodeHolanda;
+}; 
+typedef struct insercaoHolanda nodeHolanda;
 
 nodeHolanda* createNodeHolanda(int n)
 { 
@@ -146,6 +153,11 @@ nodeHolanda* insertHolanda(nodeHolanda* root, int n)
 
 }
 /*--------------- FIM INSERÇÃO DA ÁRVORE SELECAO DO HOLANDA --------------------------*/
+
+/*----------------------------------------------FIM DOS ALGORITMOS DE INSERÇÃO NA ÁRVORE------------------------------------------------*/
+
+
+/*-----------------------------------------------------ALGORITMOS DE BUSCA NA ÁRVORE-------------------------------------------------------*/
 
 /*--------------- INÍCIO BUSCA CATAR --------------------------*/
 int searchQatar(nodeQatar* root, int pesq)//algoritmo simples de busca na árvore
@@ -223,6 +235,7 @@ int searchHolanda(nodeHolanda* root, int pesq)//algoritmo simples de busca na á
 }
 /*--------------- FIM BUSCA HOLANDA --------------------------*/
 
+/*-------------------------------------------------FIM DOS ALGORITMOS DE BUSCA NA ÁRVORE--------------------------------------------------*/
 
 int main()
 {   //Neste ponto, consideramos a arvore vazia, portanto, raiz aponta para NULL
@@ -232,10 +245,14 @@ int main()
     nodeHolanda* rootHolanda = NULL;
 
     int n, pesq, menu, start;
+    int figQatar[20]= {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
+    int figEquador[20]= {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
+    int figSenegal[20]= {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
+    int figHolanda[20]= {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
     char ch = 'S', es = 'N';
 
     while (start != 4)
-    {   printf("Você deseja: \n");
+    {   printf("\nVocê deseja: \n");
         printf("1<Inserir>\n");
         printf("2<Buscar>\n");
         printf("3<Exibir>\n");
@@ -263,7 +280,17 @@ int main()
                         scanf("%d", &n);
                         rootQatar = insertQatar(rootQatar, n); //Após receber o valor, é necessário chamar a função de inserção na árvore binária, adicionando um novo nó.
                                      //a função irá receber o valor do ENDEREÇO da raiz e o dado a ser inserido na árvore em questão
+                        
                         getchar();
+
+                         for (int i = 0; i <=20; i++)
+                        {
+                            if (n == figQatar[i])
+                            {
+                                figQatar[i] = 0;
+                            }
+                            
+                        }
 
                         printf("\nDeseja inserir outra figurinha? (S/N)?  ");
                         ch = getchar();
@@ -277,8 +304,17 @@ int main()
                     {
                         printf("\nDigite o número da figurinha:  ");
                         scanf("%d", &n);
-                        rootEquador = insertEquador(rootEquador, n);
+                        rootEquador = insertEquador(rootEquador, n); 
                         getchar();
+
+                         for (int i = 0; i <=20; i++)
+                        {
+                            if (n == figEquador[i])
+                            {
+                                figEquador[i] = 0;
+                            }
+                            
+                        }
 
                         printf("\nDeseja inserir outra figurinha? (S/N)?  ");
                         ch = getchar();
@@ -295,6 +331,15 @@ int main()
                         rootSenegal = insertSenegal(rootSenegal, n);
                         getchar();
 
+                         for (int i = 0; i <=20; i++)
+                        {
+                            if (n == figSenegal[i])
+                            {
+                                figSenegal[i] = 0;
+                            }
+                            
+                        }
+
                         printf("\nDeseja inserir outra figurinha? (S/N)?  ");
                         ch = getchar();
                         fflush(stdin);        
@@ -309,6 +354,15 @@ int main()
                         scanf("%d", &n);
                         rootHolanda = insertHolanda(rootHolanda, n);
                         getchar();
+
+                         for (int i = 0; i <=20; i++)
+                        {
+                            if (n == figHolanda[i])
+                            {
+                                figHolanda[i] = 0;
+                            }
+                            
+                        }
 
                         printf("\nDeseja inserir outra figurinha? (S/N)?  ");
                         ch = getchar();
@@ -429,6 +483,79 @@ int main()
                 break;
                 }
         }break; 
+
+        case 3: //seleciona a opção de exibição das figurinhas
+        {
+            printf("Você ainda não obteve as seguintes figurinhas: \n");
+            printf("----->Qatar<----- \n");
+                for (int i = 0; i < 20; i++)
+                {
+                    if (figQatar[i] != 0)
+                    {
+                        printf("%d - ", figQatar[i]);
+                    } 
+                }
+            printf("\n----->Equador<----- \n");
+                for (int j = 0; j < 20; j++)
+                {
+                    if (figEquador[j] != 0)
+                    {
+                        printf("%d - ", figEquador[j]);
+                    }
+                }
+            printf("\n----->Senegal<----- \n");
+                for (int k = 0; k < 20; k++)
+                {
+                    if (figSenegal[k] != 0)
+                    {
+                        printf("%d - ", figSenegal[k]);
+                    }
+                }    
+            printf("\n----->Holanda<----- \n");
+                for (int l = 0; l < 20; l++)
+                {
+                    if (figHolanda[l] != 0)
+                    {
+                        printf("%d - ", figHolanda[l]);
+                    }
+                    
+                }
+            
+            printf("\n\nVocê já obteve as seguintes figurinhas: \n");
+            printf("----->Qatar<----- \n");
+                for (int i = 0; i < 20; i++)
+                {
+                    if (figQatar[i] == 0)
+                    {
+                        printf("%d - ", i+1);
+                    } 
+                }
+            printf("\n----->Equador<----- \n");
+                for (int j = 0; j < 20; j++)
+                {
+                    if (figEquador[j] == 0)
+                    {
+                        printf("%d - ", j+1);
+                    }
+                }
+            printf("\n----->Senegal<----- \n");
+                for (int k = 0; k < 20; k++)
+                {
+                    if (figSenegal[k] == 0)
+                    {
+                        printf("%d - ", k+1);
+                    }
+                }    
+            printf("\n----->Holanda<----- \n");
+                for (int l = 0; l <= 20; l++)
+                {
+                    if (figHolanda[l] == 0)
+                    {
+                        printf("%d - ", l+1);
+                    }
+                    
+                }
+        }
 
         default:
             break;
