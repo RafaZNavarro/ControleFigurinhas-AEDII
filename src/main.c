@@ -1,5 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<est.h>
+
 /*  --> Binary Search Tree: Valores dos nós a esquerda da sub árvore são Maiores ou iguais ao valor na raiz,
     enquanto os valores dos nós a direita são MAIORES que a raiz
     --> Na memória do computador, a lista deve ser representada como uma "linked list", que contém um variável 
@@ -9,13 +11,13 @@
 /*------------------------------------------------ALGORITMOS DE INSERÇÃO NA ÁRVORE--------------------------------------------------*/
 
 /*--------------- INSERÇÃO DA ÁRVORE  SELECAO DO QATAR --------------------------*/
-struct insercaoQatar //Declaracao da Arvore
+/*struct insercaoQatar //Declaracao da Arvore
 { 
     int data; //Recebe o valor a ser manipulado
     struct insercaoQatar* left; //Os ponteiros permitem acessar todos os outros nós da árvore binária, partindo da raiz 
     struct insercaoQatar* right; //Para acessar a raiz, é necessário definir um ponteiro para ela, que será feito na função main
 }; 
-typedef struct insercaoQatar nodeQatar; //Para evitar varias repeticoes desnecessárias, utiliza-se o typedef
+typedef struct insercaoQatar nodeQatar; //Para evitar varias repeticoes desnecessárias, utiliza-se o typedef*/
 
 nodeQatar* createNodeQatar(int n)
 { 
@@ -45,13 +47,13 @@ nodeQatar* insertQatar(nodeQatar* root, int n)
 /*--------------- FIM INSERÇÃO DA ÁRVORE  SELECAO DO QATAR --------------------------*/
 
 /*--------------- INSERÇÃO DA ÁRVORE  SELECAO DO EQUADOR --------------------------*/
-struct insercaoEquador
+/*struct insercaoEquador
 { 
     int data;
     struct insercaoEquador* left; 
     struct insercaoEquador* right; 
 }; 
-typedef struct insercaoEquador nodeEquador;
+typedef struct insercaoEquador nodeEquador;*/
 
 nodeEquador* createNodeEquador(int n)
 { 
@@ -82,13 +84,13 @@ nodeEquador* insertEquador(nodeEquador* root, int n)
 /*--------------- FIM INSERÇÃO DA ÁRVORE SELECAO DO EQUADOR --------------------------*/
 
 /*--------------- INSERÇÃO DA ÁRVORE SELECAO DO SENEGAL --------------------------*/
-struct insercaoSenegal
+/*struct insercaoSenegal
 { 
     int data;
     struct insercaoSenegal* left; 
     struct insercaoSenegal* right; 
 }; 
-typedef struct insercaoSenegal nodeSenegal;
+typedef struct insercaoSenegal nodeSenegal;*/
 
 nodeSenegal* createNodeSenegal(int n)
 { 
@@ -119,13 +121,13 @@ nodeSenegal* insertSenegal(nodeSenegal* root, int n)
 /*--------------- FIM INSERÇÃO DA ÁRVORE SELECAO DO SENEGAL --------------------------*/
 
 /*--------------- INSERÇÃO DA ÁRVORE SELECAO DO HOLANDA --------------------------*/
-struct insercaoHolanda
+/*struct insercaoHolanda
 { 
     int data;
     struct insercaoHolanda* left; 
     struct insercaoHolanda* right; 
 }; 
-typedef struct insercaoHolanda nodeHolanda;
+typedef struct insercaoHolanda nodeHolanda;*/
 
 nodeHolanda* createNodeHolanda(int n)
 { 
@@ -283,7 +285,7 @@ int main()
                         
                         getchar();
 
-                         for (int i = 0; i <=20; i++)
+                        for (int i = 0; i <=20; i++)
                         {
                             if (n == figQatar[i])
                             {
