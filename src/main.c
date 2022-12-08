@@ -7,44 +7,12 @@
     --> Na memória do computador, a lista deve ser representada como uma "linked list", que contém um variável 
     para receber o VALOR, uma para o ENDEREÇO à esquerda do elemento filho e um ENDEREÇO à direita do outro filho.  
 */
+
+/*  O programa a seguir busca apresentar uma maneira de controle e exibiçãoo das figurinhas do album da copa do mundo de 2022
+    utilizando Arvores binárias para realizar a insercao, controle e a exibição dos dados em sua totalidade
+*/
  
 /*------------------------------------------------ALGORITMOS DE INSERÇÃO NA ÁRVORE--------------------------------------------------*/
-
-/*--------------- INSERÇÃO DA ÁRVORE  SELECAO DO QATAR --------------------------*/
-/*struct insercaoQatar //Declaracao da Arvore
-{ 
-    int data; //Recebe o valor a ser manipulado
-    struct insercaoQatar* left; //Os ponteiros permitem acessar todos os outros nós da árvore binária, partindo da raiz 
-    struct insercaoQatar* right; //Para acessar a raiz, é necessário definir um ponteiro para ela, que será feito na função main
-}; 
-typedef struct insercaoQatar nodeQatar; //Para evitar varias repeticoes desnecessárias, utiliza-se o typedef*/
-
-nodeQatar* createNodeQatar(int n)
-{ 
-    nodeQatar* newNode;
-    newNode = (nodeQatar*)malloc(sizeof(nodeQatar));
-    newNode->data = n;
-    newNode->left = newNode->right = NULL;
-    return newNode;
-} 
-
-nodeQatar* insertQatar(nodeQatar* root, int n)
-{
-    if (root == NULL)
-    {
-        root = createNodeQatar(n);
-
-    }else if(n <= root->data)
-    {
-        root->left = insertQatar(root->left, n);
-    }else
-    {
-        root->right = insertQatar(root->right, n);
-
-    }
-    return root;  
-}
-/*--------------- FIM INSERÇÃO DA ÁRVORE  SELECAO DO QATAR --------------------------*/
 
 /*--------------- INSERÇÃO DA ÁRVORE  SELECAO DO EQUADOR --------------------------*/
 /*struct insercaoEquador
@@ -55,7 +23,7 @@ nodeQatar* insertQatar(nodeQatar* root, int n)
 }; 
 typedef struct insercaoEquador nodeEquador;*/
 
-nodeEquador* createNodeEquador(int n)
+/*nodeEquador* createNodeEquador(int n)
 { 
     nodeEquador* newNode;
     newNode = (nodeEquador*)malloc(sizeof(nodeEquador));
@@ -80,7 +48,7 @@ nodeEquador* insertEquador(nodeEquador* root, int n)
     }
     return root;  
 
-}
+}*/
 /*--------------- FIM INSERÇÃO DA ÁRVORE SELECAO DO EQUADOR --------------------------*/
 
 /*--------------- INSERÇÃO DA ÁRVORE SELECAO DO SENEGAL --------------------------*/
@@ -90,7 +58,7 @@ nodeEquador* insertEquador(nodeEquador* root, int n)
     struct insercaoSenegal* left; 
     struct insercaoSenegal* right; 
 }; 
-typedef struct insercaoSenegal nodeSenegal;*/
+typedef struct insercaoSenegal nodeSenegal;
 
 nodeSenegal* createNodeSenegal(int n)
 { 
@@ -117,7 +85,7 @@ nodeSenegal* insertSenegal(nodeSenegal* root, int n)
     }
     return root;  
 
-}
+}*/
 /*--------------- FIM INSERÇÃO DA ÁRVORE SELECAO DO SENEGAL --------------------------*/
 
 /*--------------- INSERÇÃO DA ÁRVORE SELECAO DO HOLANDA --------------------------*/
@@ -127,7 +95,7 @@ nodeSenegal* insertSenegal(nodeSenegal* root, int n)
     struct insercaoHolanda* left; 
     struct insercaoHolanda* right; 
 }; 
-typedef struct insercaoHolanda nodeHolanda;*/
+typedef struct insercaoHolanda nodeHolanda;
 
 nodeHolanda* createNodeHolanda(int n)
 { 
@@ -153,7 +121,7 @@ nodeHolanda* insertHolanda(nodeHolanda* root, int n)
     }
     return root;  
 
-}
+}*/
 /*--------------- FIM INSERÇÃO DA ÁRVORE SELECAO DO HOLANDA --------------------------*/
 
 /*----------------------------------------------FIM DOS ALGORITMOS DE INSERÇÃO NA ÁRVORE------------------------------------------------*/
@@ -176,7 +144,7 @@ int searchQatar(nodeQatar* root, int pesq)//algoritmo simples de busca na árvor
     }else
     {
         return searchQatar(root->right, pesq);
-    }   
+    }
 }
 /*--------------- FIM BUSCA CATAR --------------------------*/
 
@@ -239,6 +207,50 @@ int searchHolanda(nodeHolanda* root, int pesq)//algoritmo simples de busca na á
 
 /*-------------------------------------------------FIM DOS ALGORITMOS DE BUSCA NA ÁRVORE--------------------------------------------------*/
 
+/*-----------------------------------------------------ALGORITMO DE EXIBIÇÃO NA ÁRVORE-------------------------------------------------------*/
+void inorderQatar(nodeQatar *root){
+    if (root == NULL) //checa se root aponta para nulo, se apontar, para de exibir e retorna
+    {
+        return;
+    }else{
+        inorderQatar(root->left); //direciona o ponteiro para o lado esquerdo da arvore
+        printf("QAT-%d ... ", root->data);//processa o dado ao chegar no valor "mais a esquerda"
+        inorderQatar(root->right);//direicona o ponteiro para o lado direito da arvore
+    }  
+}
+void inorderEquador(nodeEquador *root){
+    if (root == NULL)
+    {
+        return;
+    }else{
+        inorderEquador(root->left);
+        printf("EQU-%d ... ", root->data);
+        inorderEquador(root->right);
+    }  
+}
+void inorderSenegal(nodeSenegal *root){
+    if (root == NULL)
+    {
+        return;
+    }else{
+        inorderSenegal(root->left);
+        printf("SEN-%d ... ", root->data);
+        inorderSenegal(root->right);
+    }  
+}
+void inorderHolanda(nodeHolanda *root){
+    if (root == NULL)
+    {
+        return;
+    }else{
+        inorderHolanda(root->left);
+        printf("HOL-%d ... ", root->data);
+        inorderHolanda(root->right);
+    }  
+}
+
+/*-----------------------------------------------------FIM DO ALGORITMO DE EXIBIÇÃO NA ÁRVORE-------------------------------------------------------*/
+
 int main()
 {   //Neste ponto, consideramos a arvore vazia, portanto, raiz aponta para NULL
     nodeQatar* rootQatar = NULL; 
@@ -246,12 +258,12 @@ int main()
     nodeSenegal* rootSenegal = NULL;
     nodeHolanda* rootHolanda = NULL;
 
-    int n, pesq, menu, start;
+    int n, pesq, menu, start=0;
     int figQatar[20]= {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
     int figEquador[20]= {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
     int figSenegal[20]= {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
     int figHolanda[20]= {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
-    char ch = 'S', es = 'N';
+    char ch = 'S';
 
     while (start != 4)
     {   printf("\nVocê deseja: \n");
@@ -488,7 +500,25 @@ int main()
 
         case 3: //seleciona a opção de exibição das figurinhas
         {
-            printf("Você ainda não obteve as seguintes figurinhas: \n");
+            
+            printf("Você já obteve as seguintes figurinhas: \n");
+            printf("Qatar: \n");
+            inorderQatar(rootQatar);
+            printf("\n--------------------------------------------------\n");
+            printf("Equador: \n");
+            inorderEquador(rootEquador);
+            printf("\n--------------------------------------------------\n");
+            printf("Senegal: \n");
+            inorderSenegal(rootSenegal);
+            printf("\n--------------------------------------------------\n");
+            printf("Holanda: \n");
+            inorderHolanda(rootHolanda);
+            printf("\n--------------------------------------------------\n");
+
+            
+            
+            
+            /*printf("Você ainda não obteve as seguintes figurinhas: \n");
             printf("----->Qatar<----- \n");
                 for (int i = 0; i < 20; i++)
                 {
@@ -556,8 +586,8 @@ int main()
                         printf("%d - ", l+1);
                     }
                     
-                }
-        }
+                }*/
+        }break;
 
         default:
             break;
