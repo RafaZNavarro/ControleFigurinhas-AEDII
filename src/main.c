@@ -12,124 +12,9 @@
     utilizando Arvores binárias para realizar a insercao, controle e a exibição dos dados em sua totalidade
 */
  
-/*------------------------------------------------ALGORITMOS DE INSERÇÃO NA ÁRVORE--------------------------------------------------*/
-
-/*--------------- INSERÇÃO DA ÁRVORE  SELECAO DO EQUADOR --------------------------*/
-/*struct insercaoEquador
-{ 
-    int data;
-    struct insercaoEquador* left; 
-    struct insercaoEquador* right; 
-}; 
-typedef struct insercaoEquador nodeEquador;*/
-
-/*nodeEquador* createNodeEquador(int n)
-{ 
-    nodeEquador* newNode;
-    newNode = (nodeEquador*)malloc(sizeof(nodeEquador));
-    newNode->data = n;
-    newNode->left = newNode->right = NULL;
-    return newNode;
-}
-
-nodeEquador* insertEquador(nodeEquador* root, int n)
-{
-    if (root == NULL)
-    {
-        root = createNodeEquador(n);
-
-    }else if(n <= root->data)
-    {
-        root->left = insertEquador(root->left, n);
-    }else
-    {
-        root->right = insertEquador(root->right, n);
-
-    }
-    return root;  
-
-}*/
-/*--------------- FIM INSERÇÃO DA ÁRVORE SELECAO DO EQUADOR --------------------------*/
-
-/*--------------- INSERÇÃO DA ÁRVORE SELECAO DO SENEGAL --------------------------*/
-/*struct insercaoSenegal
-{ 
-    int data;
-    struct insercaoSenegal* left; 
-    struct insercaoSenegal* right; 
-}; 
-typedef struct insercaoSenegal nodeSenegal;
-
-nodeSenegal* createNodeSenegal(int n)
-{ 
-    nodeSenegal* newNode;
-    newNode = (nodeSenegal*)malloc(sizeof(nodeSenegal));
-    newNode->data = n;
-    newNode->left = newNode->right = NULL;
-    return newNode;
-}
-
-nodeSenegal* insertSenegal(nodeSenegal* root, int n)
-{
-    if (root == NULL)
-    {
-        root = createNodeSenegal(n);
-
-    }else if(n <= root->data)
-    {
-        root->left = insertSenegal(root->left, n);
-    }else
-    {
-        root->right = insertSenegal(root->right, n);
-
-    }
-    return root;  
-
-}*/
-/*--------------- FIM INSERÇÃO DA ÁRVORE SELECAO DO SENEGAL --------------------------*/
-
-/*--------------- INSERÇÃO DA ÁRVORE SELECAO DO HOLANDA --------------------------*/
-/*struct insercaoHolanda
-{ 
-    int data;
-    struct insercaoHolanda* left; 
-    struct insercaoHolanda* right; 
-}; 
-typedef struct insercaoHolanda nodeHolanda;
-
-nodeHolanda* createNodeHolanda(int n)
-{ 
-    nodeHolanda* newNode;
-    newNode = (nodeHolanda*)malloc(sizeof(nodeHolanda));
-    newNode->data = n;
-    newNode->left = newNode->right = NULL;
-    return newNode;
-}
-nodeHolanda* insertHolanda(nodeHolanda* root, int n)
-{
-    if (root == NULL)
-    {
-        root = createNodeHolanda(n);
-
-    }else if(n <= root->data)
-    {
-        root->left = insertHolanda(root->left, n);
-    }else
-    {
-        root->right = insertHolanda(root->right, n);
-
-    }
-    return root;  
-
-}*/
-/*--------------- FIM INSERÇÃO DA ÁRVORE SELECAO DO HOLANDA --------------------------*/
-
-/*----------------------------------------------FIM DOS ALGORITMOS DE INSERÇÃO NA ÁRVORE------------------------------------------------*/
-
-
 /*-----------------------------------------------------ALGORITMOS DE BUSCA NA ÁRVORE-------------------------------------------------------*/
 
-/*--------------- INÍCIO BUSCA CATAR --------------------------*/
+/*--------------- INÍCIO BUSCA CATAR --------------------------
 int searchQatar(nodeQatar* root, int pesq)//algoritmo simples de busca na árvore
 {
     if (root == NULL)
@@ -146,9 +31,9 @@ int searchQatar(nodeQatar* root, int pesq)//algoritmo simples de busca na árvor
         return searchQatar(root->right, pesq);
     }
 }
-/*--------------- FIM BUSCA CATAR --------------------------*/
+--------------- FIM BUSCA CATAR --------------------------*/
 
-/*--------------- INÍCIO BUSCA EQUADOR --------------------------*/
+/*--------------- INÍCIO BUSCA EQUADOR --------------------------
 int searchEquador(nodeEquador* root, int pesq)//algoritmo simples de busca na árvore
 {
     if (root == NULL)
@@ -165,9 +50,9 @@ int searchEquador(nodeEquador* root, int pesq)//algoritmo simples de busca na á
         return searchEquador(root->right, pesq);
     }   
 }
-/*--------------- FIM BUSCA EQUADOR --------------------------*/
+--------------- FIM BUSCA EQUADOR --------------------------*/
 
-/*--------------- INÍCIO BUSCA SENEGAL --------------------------*/
+/*--------------- INÍCIO BUSCA SENEGAL --------------------------
 int searchSenegal(nodeSenegal* root, int pesq)//algoritmo simples de busca na árvore
 {
     if (root == NULL)
@@ -184,9 +69,9 @@ int searchSenegal(nodeSenegal* root, int pesq)//algoritmo simples de busca na á
         return searchSenegal(root->right, pesq);
     }   
 }
-/*--------------- FIM BUSCA SENEGAL --------------------------*/
+--------------- FIM BUSCA SENEGAL --------------------------*/
 
-/*--------------- INÍCIO BUSCA HOLANDA --------------------------*/
+/*--------------- INÍCIO BUSCA HOLANDA --------------------------
 int searchHolanda(nodeHolanda* root, int pesq)//algoritmo simples de busca na árvore
 {
     if (root == NULL)
@@ -203,7 +88,7 @@ int searchHolanda(nodeHolanda* root, int pesq)//algoritmo simples de busca na á
         return searchHolanda(root->right, pesq);
     }   
 }
-/*--------------- FIM BUSCA HOLANDA --------------------------*/
+--------------- FIM BUSCA HOLANDA --------------------------*/
 
 /*-------------------------------------------------FIM DOS ALGORITMOS DE BUSCA NA ÁRVORE--------------------------------------------------*/
 
