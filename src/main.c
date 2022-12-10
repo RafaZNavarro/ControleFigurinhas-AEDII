@@ -1,60 +1,21 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<est.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "est.h"
 
-/*  --> Binary Search Tree: Valores dos nós a esquerda da sub árvore são Maiores ou iguais ao valor na raiz,
-    enquanto os valores dos nós a direita são MAIORES que a raiz
-    --> Na memória do computador, a lista deve ser representada como uma "linked list", que contém um variável 
-    para receber o VALOR, uma para o ENDEREÇO à esquerda do elemento filho e um ENDEREÇO à direita do outro filho.  
-*/
 
 /*  O programa a seguir busca apresentar uma maneira de controle e exibiçãoo das figurinhas do album da copa do mundo de 2022
-    utilizando Arvores binárias para realizar a insercao, controle e a exibição dos dados em sua totalidade
+    utilizando Arvores binárias para realizar a inserção, controle e a exibição das figurinhas.
+    
+    O programa foi dividido em quatro bibliotecas de funções para controlar a INSERÇÃO (node.c), a PESQUISA (search.c), 
+    a EXIBIÇÃO (exhibition.c) e a impressão das figurinhas em arquivo (print.c) das figurinhas já obtidas e as faltantes.
+
+    A execução basica do código funciona com um menu switch-case dentro de um laço While, onde estão disponíveis quatro opções para
+    o usuário: 1-inserir, 2-pesquisar, 3-exibir e 4-imprimir. para sair, o usuário deve digitar 5.
+
+    Tanto a Inserção, quanto a Pesquisa também operam com um loop While e um switch-case, para inserir de maneira unitária cada uma das 
+    figurinhas para cada uma das seleções, em cada uma das seções a seguir serão melhor detalhadas.
 */
  
-/*-----------------------------------------------------ALGORITMO DE EXIBIÇÃO NA ÁRVORE-------------------------------------------------------
-void inorderQatar(nodeQatar *root){
-    if (root == NULL) //checa se root aponta para nulo, se apontar, para de exibir e retorna
-    {
-        return;
-    }else{
-        inorderQatar(root->left); //direciona o ponteiro para o lado esquerdo da arvore
-        printf("QAT-%d ... ", root->data);//processa o dado ao chegar no valor "mais a esquerda"
-        inorderQatar(root->right);//direicona o ponteiro para o lado direito da arvore
-    }  
-}
-void inorderEquador(nodeEquador *root){
-    if (root == NULL)
-    {
-        return;
-    }else{
-        inorderEquador(root->left);
-        printf("EQU-%d ... ", root->data);
-        inorderEquador(root->right);
-    }  
-}
-void inorderSenegal(nodeSenegal *root){
-    if (root == NULL)
-    {
-        return;
-    }else{
-        inorderSenegal(root->left);
-        printf("SEN-%d ... ", root->data);
-        inorderSenegal(root->right);
-    }  
-}
-void inorderHolanda(nodeHolanda *root){
-    if (root == NULL)
-    {
-        return;
-    }else{
-        inorderHolanda(root->left);
-        printf("HOL-%d ... ", root->data);
-        inorderHolanda(root->right);
-    }  
-}
-
------------------------------------------------------FIM DO ALGORITMO DE EXIBIÇÃO NA ÁRVORE-------------------------------------------------------*/
 
 int main()
 {   //Neste ponto, consideramos a arvore vazia, portanto, raiz aponta para NULL
@@ -70,29 +31,36 @@ int main()
     int figHolanda[20]= {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
     char ch = 'S';
 
-    while (start != 4)
+    while (start != 5)
     {   printf("\nVocê deseja: \n");
         printf("1<Inserir>\n");
         printf("2<Buscar>\n");
         printf("3<Exibir>\n");
-        printf("Digite sua escolha ou 4 para sair  ");
+        printf("4<Imprimir em Arquivo>\n");
+        printf("Digite sua escolha ou 5 para sair  ");
         scanf("%d", &start);
 
         switch (start)
         {
         case 1: //seleciona a opção de inserção das figurinhas
         {
+            printf("\nVocê está na página de Inserção das figurinhas obtidas!\n");
             printf("Qual selecao voce deseja inserir?\n");
             printf("1<Qatar>\n");
             printf("2<Equador>\n");
             printf("3<Senegal>\n");
-            printf("4<Holanda>\n");
+            printf("4<Países Baixos>\n");
             printf("Digite o numero da selecao escolhida, ou 5 para sair  ");
             scanf("%d", &menu);
 
             switch (menu)
             {
                 case 1: //Inserção Qatar
+                        
+                    printf("\n Realizando a Inserção para a seleção do Qatar!");
+                    printf("\n Não se preocupe com a ordem! O programa ordena pra você!");
+                    printf("\n ----------------------------------------------------------------");
+
                     do
                     {
                         printf("\nDigite o número da figurinha:  ");
@@ -119,8 +87,14 @@ int main()
                 break;
 
                 case 2: //Inserção Equador
+                    
+                    printf("\n Realizando a Inserção para a seleção do Equador!");
+                    printf("\n Não se preocupe com a ordem! O programa ordena pra você!");
+                    printf("\n ----------------------------------------------------------------");
+                    
                     do
                     {
+                        
                         printf("\nDigite o número da figurinha:  ");
                         scanf("%d", &n);
                         rootEquador = insertEquador(rootEquador, n); 
@@ -143,6 +117,11 @@ int main()
                 break;
 
                 case 3: //Inserção Senegal
+
+                    printf("\n Realizando a Inserção para a seleção do Senegal!");
+                    printf("\n Não se preocupe com a ordem! O programa ordena pra você!");
+                    printf("\n ----------------------------------------------------------------");
+                    
                     do
                     {
                         printf("\nDigite o número da figurinha:  ");
@@ -167,6 +146,11 @@ int main()
                 break;
                             
                 case 4: //Inserção Holanda
+
+                    printf("\n Realizando a Inserção para a seleção dos Países Baixos!");
+                    printf("\n Não se preocupe com a ordem! O programa ordena pra você!");
+                    printf("\n ----------------------------------------------------------------");
+
                     do
                     {
                         printf("\nDigite o número da figurinha:  ");
@@ -201,14 +185,15 @@ int main()
             printf("1<Qatar>\n");
             printf("2<Equador>\n");
             printf("3<Senegal>\n");
-            printf("4<Holanda>\n");
-            printf("Digite o numero da selecao escolhida, ou 5 para sair  ");
+            printf("4<Países Baixos>\n");
+            printf("Digite o numero da seleção escolhida, ou 5 para sair  ");
             scanf("%d", &menu);
                 switch (menu)
                 {
                     case 1: //Pesquisa Qatar
                         do
                         {
+                            printf("\n Realizando a busca de figurinhas para a seleção do Qatar!");
                             printf("\nDigite o número da figurinha:  ");
                             scanf("%d", &pesq);
                             searchQatar(rootQatar, pesq); //Após receber o valor, é necessário chamar a função de inserção na árvore binária, adicionando um novo nó.
@@ -233,6 +218,7 @@ int main()
                     case 2: //Pesquisa Equador
                         do
                         {
+                            printf("\n Realizando a busca de figurinhas para a seleção do Equador");
                             printf("\nDigite o número da figurinha:  ");
                             scanf("%d", &pesq);
                             searchEquador(rootEquador, pesq);
@@ -256,6 +242,7 @@ int main()
                     case 3: //Pesquisa Senegal
                         do
                         {
+                            printf("\n Realizando a Busca de Figurinhas para a seleção do Senegal!");
                             printf("\nDigite o número da figurinha:  ");
                             scanf("%d", &pesq);
                             searchSenegal(rootSenegal, pesq);
@@ -279,6 +266,7 @@ int main()
                     case 4://Pesquisa Holanda
                         do
                         {
+                            printf("\n Realizando a Busca de Figurinhas para a seleção dos Países Baixos!");
                             printf("\nDigite o número da figurinha:  ");
                             scanf("%d", &pesq);
                             searchHolanda(rootHolanda, pesq);
@@ -306,7 +294,7 @@ int main()
         case 3: //seleciona a opção de exibição das figurinhas
         {
             
-            printf("Você já obteve as seguintes figurinhas: \n");
+            printf("\nVocê já obteve as seguintes figurinhas: \n");
             printf("Qatar: \n");
             inorderQatar(rootQatar);
             printf("\n--------------------------------------------------\n");
@@ -320,10 +308,8 @@ int main()
             inorderHolanda(rootHolanda);
             printf("\n--------------------------------------------------\n");
 
-            
-            
-            
-            /*printf("Você ainda não obteve as seguintes figurinhas: \n");
+    
+            printf("\nVocê ainda não obteve as seguintes figurinhas: \n");
             printf("----->Qatar<----- \n");
                 for (int i = 0; i < 20; i++)
                 {
@@ -357,41 +343,6 @@ int main()
                     }
                     
                 }
-            
-            printf("\n\nVocê já obteve as seguintes figurinhas: \n");
-            printf("----->Qatar<----- \n");
-                for (int i = 0; i < 20; i++)
-                {
-                    if (figQatar[i] == 0)
-                    {
-                        printf("%d - ", i+1);
-                    } 
-                }
-            printf("\n----->Equador<----- \n");
-                for (int j = 0; j < 20; j++)
-                {
-                    if (figEquador[j] == 0)
-                    {
-                        printf("%d - ", j+1);
-                    }
-                }
-            printf("\n----->Senegal<----- \n");
-                for (int k = 0; k < 20; k++)
-                {
-                    if (figSenegal[k] == 0)
-                    {
-                        printf("%d - ", k+1);
-                    }
-                }    
-            printf("\n----->Holanda<----- \n");
-                for (int l = 0; l <= 20; l++)
-                {
-                    if (figHolanda[l] == 0)
-                    {
-                        printf("%d - ", l+1);
-                    }
-                    
-                }*/
         }break;
 
         default:

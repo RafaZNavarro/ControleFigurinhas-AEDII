@@ -1,6 +1,6 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<est.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "est.h"
 
 /*----------Insercao Qatar*/
 nodeQatar* createNodeQatar(int n)
@@ -10,8 +10,7 @@ nodeQatar* createNodeQatar(int n)
     newNode->data = n; //o novo nó irá trabalhar dentro da estrutura data da árvore, recebendo o valor de n
     newNode->left = newNode->right = NULL;//neste ponto, define os ponteiros auxiliares esquerda e direita como NULL
     return newNode;
-} 
-
+}
 nodeQatar* insertQatar(nodeQatar* root, int n)//realiza a inserção do nó na árvore 
 {
     if (root == NULL)
@@ -37,7 +36,6 @@ nodeEquador* createNodeEquador(int n)
     newNode->left = newNode->right = NULL;
     return newNode;
 }
-
 nodeEquador* insertEquador(nodeEquador* root, int n)
 {
     if (root == NULL)
@@ -64,7 +62,6 @@ nodeSenegal* createNodeSenegal(int n)
     newNode->left = newNode->right = NULL;
     return newNode;
 }
-
 nodeSenegal* insertSenegal(nodeSenegal* root, int n)
 {
     if (root == NULL)
@@ -82,6 +79,7 @@ nodeSenegal* insertSenegal(nodeSenegal* root, int n)
     return root;  
 
 }
+
 nodeHolanda* createNodeHolanda(int n)
 { 
     nodeHolanda* newNode;

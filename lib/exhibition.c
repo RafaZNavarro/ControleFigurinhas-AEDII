@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <est.h>
+#include "est.h"
 
 
 void inorderQatar(nodeQatar *root){//exibicao em ordem do Qatar
@@ -13,6 +13,7 @@ void inorderQatar(nodeQatar *root){//exibicao em ordem do Qatar
         inorderQatar(root->right);//direicona o ponteiro para o lado direito da arvore
     }  
 }
+
 void inorderEquador(nodeEquador *root){//exibicao em ordem do Equador 
     if (root == NULL)
     {
@@ -23,6 +24,7 @@ void inorderEquador(nodeEquador *root){//exibicao em ordem do Equador
         inorderEquador(root->right);
     }  
 }
+
 void inorderSenegal(nodeSenegal *root){//exibicao em ordem do Senegal
     if (root == NULL)
     {
@@ -33,6 +35,7 @@ void inorderSenegal(nodeSenegal *root){//exibicao em ordem do Senegal
         inorderSenegal(root->right);
     }  
 }
+
 void inorderHolanda(nodeHolanda *root){//exibicao em ordem do Holanda
     if (root == NULL)
     {

@@ -33,6 +33,11 @@ struct insercaoHolanda
 typedef struct insercaoHolanda nodeHolanda;
 //------------------Fim das Declaração das Estruturas de Controle------------------//
 
+nodeQatar* insertQatar(nodeQatar* root, int n);
+nodeEquador* insertEquador(nodeEquador* root, int n);
+nodeSenegal* insertSenegal(nodeSenegal* root, int n);
+nodeHolanda* insertHolanda(nodeHolanda* root, int n);
+
 //------------------Declaração das Funções de Pesquisa------------------//
 int searchQatar(nodeQatar* root, int pesq);
 int searchEquador(nodeEquador* root, int pesq);
@@ -41,8 +46,8 @@ int searchHolanda(nodeHolanda* root, int pesq);
 //------------------Fim da Declaração das Funções de Pesquisa------------------//
 
 //------------------Declaração das Funções de Exibição em Ordem------------------//
-void inorderQatar(nodeQatar *root)
-void inorderEquador(nodeEquador *root)
-void inorderSenegal(nodeSenegal *root)
-void inorderHolanda(nodeHolanda *root)
+void inorderQatar(nodeQatar* root);
+void inorderEquador(nodeEquador* root);
+void inorderSenegal(nodeSenegal* root);
+void inorderHolanda(nodeHolanda* root);
 //------------------Fim da Declaração das Funções de Exibição em Ordem------------------//
