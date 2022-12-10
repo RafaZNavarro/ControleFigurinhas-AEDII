@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "est.h"
+#include <est.h>
 
 /*--------------- INÍCIO BUSCA CATAR --------------------------*/
 int searchQatar(nodeQatar* root, int pesq)//algoritmo simples de busca na árvore

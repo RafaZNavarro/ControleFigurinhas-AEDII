@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "est.h"
+#include <est.h>
 
 /*----------Insercao Qatar*/
 nodeQatar* createNodeQatar(int n)

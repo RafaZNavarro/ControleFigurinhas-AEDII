@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "est.h"
+#include <est.h>
 
 
 void inorderQatar(nodeQatar *root){//exibicao em ordem do Qatar

@@ -51,3 +51,15 @@ void inorderEquador(nodeEquador* root);
 void inorderSenegal(nodeSenegal* root);
 void inorderHolanda(nodeHolanda* root);
 //------------------Fim da Declaração das Funções de Exibição em Ordem------------------//
+
+//------------------Declaração das Funções de imprimir a lista------------------//
+void exportQatar(nodeQatar* root);
+void exportEquador(nodeEquador* root);
+void exportSenegal(nodeSenegal* root);
+void exportHolanda(nodeHolanda* root);
+
+void printQatar(FILE *arquivo, nodeQatar* root);
+void printEquador(FILE *arquivo, nodeEquador* root);
+void printSenegal(FILE *arquivo, nodeSenegal* root);
+void printHolanda(FILE *arquivo, nodeHolanda* root);
+//------------------Fim da Declaração das Funções imprimir a lista------------------//
