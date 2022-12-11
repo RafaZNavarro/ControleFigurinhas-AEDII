@@ -2,9 +2,19 @@
 #include <stdlib.h>
 #include <est.h>
 
+//As funções apresentadas a seguir realizam a EXIBIÇÃO dos elementos das árvores binárias.
+//Por serem funções com atividades idênticas, variando apenas a seleção, toda a explicação referente 
+//a seleção do Qatar pode ser apliacada as outras três consideradas nessa versão.
 
-void inorderQatar(nodeQatar *root){//exibicao em ordem do Qatar
-    if (root == NULL) //checa se root aponta para nulo, se apontar, para de exibir e retorna
+//A exibição dos elementos da árvore funciona a partir do algoritmo de exibição em ordem, aplicada de maneira recursiva, 
+//como pode ser vista na função inorder a seguir.
+//A pesquisa segue a seguinte ESQ-NÓ-DIR, onde primeiro são visitados os nós a esquerda da raíz, depois é realizado o processamento,
+//para então visitar-se no nó mais a direita.
+//A própria função já realiza o retorno em linha das figurinhas já obtidas pelo usuário após a inserção.
+
+//exibicao em ordem do Qatar
+void inorderQatar(nodeQatar *root){//a função recebe como argumento a raiz daquela sub-árvore
+    if (root == NULL) //checa se root aponta para nulo, se apontar, para a exibição e retorna
     {
         return;
     }else{
@@ -14,7 +24,8 @@ void inorderQatar(nodeQatar *root){//exibicao em ordem do Qatar
     }  
 }
 
-void inorderEquador(nodeEquador *root){//exibicao em ordem do Equador 
+//exibicao em ordem do Equador 
+void inorderEquador(nodeEquador *root){
     if (root == NULL)
     {
         return;
@@ -25,7 +36,8 @@ void inorderEquador(nodeEquador *root){//exibicao em ordem do Equador
     }  
 }
 
-void inorderSenegal(nodeSenegal *root){//exibicao em ordem do Senegal
+//exibicao em ordem do Senegal
+void inorderSenegal(nodeSenegal *root){
     if (root == NULL)
     {
         return;
@@ -36,7 +48,8 @@ void inorderSenegal(nodeSenegal *root){//exibicao em ordem do Senegal
     }  
 }
 
-void inorderHolanda(nodeHolanda *root){//exibicao em ordem do Holanda
+//exibicao em ordem do Holanda
+void inorderHolanda(nodeHolanda *root){
     if (root == NULL)
     {
         return;

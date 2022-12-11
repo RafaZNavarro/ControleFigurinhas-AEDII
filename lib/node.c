@@ -2,7 +2,22 @@
 #include <stdlib.h>
 #include <est.h>
 
-/*----------Insercao Qatar*/
+//As funções apresentadas a seguir realizam a inserção dos elementos dentro das árvores binárias.
+//Por serem funções com atividades idênticas, variando apenas a seleção, toda a explicação referente 
+//a seleção do Qatar pode ser apliacada as outras três consideradas nessa versão.
+
+//----------INSERÇÃO QATAR----------
+
+//A insercão de um novo nó em sua respectiva árvore funciona a partir do recebimento do valor n, inserido pelo usuário.
+//A primeira coisa a ser feita é criar esse novo nó em sua respectiva árvorem como apresentado na função createNode a seguir.
+//O nó aloca uma memória específica, através da função MALLOC.
+//O nó então indicara que a variável data, recebe o valor de n inserido pelo usuário naquela árvore, enquanto os ponteiros auxiliares
+//left e right deveram ambos apontar para NULL, criando assim uma nova folha naquela árvore.
+
+//A inserção então é feita de maneira recursiva, apresentada na função insert abaixo.
+//Trata-se de um algoritmo simples e que irá realizar as comparações conforme o valor da "raíz" daquela sub árvore com o valor inserido
+//pelo usuário, para então permitir o posicionamento correto dos elementos. 
+
 nodeQatar* createNodeQatar(int n)
 { 
     nodeQatar* newNode; //cria uma nova variável para ser manipulada na árvore
@@ -27,7 +42,9 @@ nodeQatar* insertQatar(nodeQatar* root, int n)//realiza a inserção do nó na �
     }
     return root;  
 }
+//----------FIM DA INSERÇÃO QATAR----------
 
+//----------INSERÇÃO EQUADOR----------
 nodeEquador* createNodeEquador(int n)
 { 
     nodeEquador* newNode;
@@ -53,7 +70,9 @@ nodeEquador* insertEquador(nodeEquador* root, int n)
     return root;  
 
 }
+//----------FIM DA INSERÇÃO EQUADOR----------
 
+//----------INSERÇÃO SENEGAL----------
 nodeSenegal* createNodeSenegal(int n)
 { 
     nodeSenegal* newNode;
@@ -79,7 +98,9 @@ nodeSenegal* insertSenegal(nodeSenegal* root, int n)
     return root;  
 
 }
+//----------FIM DA INSERÇÃO SENEGAL----------
 
+//----------INSERÇÃO PAÍSES BAIXOS----------
 nodeHolanda* createNodeHolanda(int n)
 { 
     nodeHolanda* newNode;
@@ -105,3 +126,4 @@ nodeHolanda* insertHolanda(nodeHolanda* root, int n)
     return root;  
 
 }
+//----------FIM DA INSERÇÃO PAÍSES BAIXOS----------
